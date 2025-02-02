@@ -22,13 +22,13 @@ export default function ConfirmDeleteDialog({
     fetchNotifications();
   }, []);
   const handleDelete = async () => {
-    // Perform the delete operation
+    
     await onConfirm();
 
-    // Add a notification after the deletion
+  
     onAddNotification(notifications);
 
-    // Optionally, fetch updated notifications
+ 
     fetchNotifications();
   };
   return (

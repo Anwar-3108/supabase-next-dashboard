@@ -8,8 +8,6 @@ export default function EditEntryDialog({ invoice, onSubmit, onClose,onAddNotifi
   const [loading, setLoading] = useState(false);
   const [notifications, setNotifications] = useState([]);
   
-  
-
   const fetchNotifications = async () => {
     try {
       const response = await axios.get("/api/notifications");

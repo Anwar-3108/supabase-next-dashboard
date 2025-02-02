@@ -2,19 +2,19 @@
 import React from "react";
 
 export default function CustomPagination({ totalPages, currentPage, onPageChange }) {
-  // Function to get the visible page numbers for small screens
+  
   const getVisiblePages = () => {
     if (window.innerWidth < 768) {
-      // On small screens, show only 3 page numbers at a time (currentPage +/- 1)
+   
       const visiblePages = [];
-      const start = Math.max(1, currentPage - 1); // Start from 1 if we are at the first page
-      const end = Math.min(totalPages, currentPage + 1); // End at totalPages if we are at the last page
+      const start = Math.max(1, currentPage - 1); 
+      const end = Math.min(totalPages, currentPage + 1);
       for (let i = start; i <= end; i++) {
         visiblePages.push(i);
       }
       return visiblePages;
     }
-    return Array.from({ length: totalPages }, (_, i) => i + 1); // For large screens, show all pages
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
   };
 
   const visiblePages = getVisiblePages();

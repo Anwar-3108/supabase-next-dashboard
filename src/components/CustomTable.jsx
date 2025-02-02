@@ -46,7 +46,7 @@ export default function CustomTable() {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const params = { search: searchQuery }; // Always include search param
+        const params = { search: searchQuery }; 
 
         if (!searchQuery) {
           params.page = currentPage;
@@ -75,7 +75,7 @@ export default function CustomTable() {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
-    setCurrentPage(1); // Reset pagination when searching
+    setCurrentPage(1); 
   };
 
   const openEditDialog = (invoice) => setSelectedInvoice(invoice);
@@ -160,7 +160,7 @@ export default function CustomTable() {
     <div className="w-full p-6">
       <div className="text-white rounded-lg shadow-xl border border-gray-800">
         <div className="flex flex-col sm:flex-row justify-between items-center p-2 space-y-4 sm:space-y-0 sm:space-x-4">
-          {/* Search Bar */}
+         
           <input
             type="search"
             placeholder="Search by Expense Name..."
@@ -169,11 +169,11 @@ export default function CustomTable() {
             className="w-full sm:w-64 px-4 py-2 rounded-md text-cyan-300 bg-gray-800 border border-gray-600 focus:outline-none"
           />
 
-          {/* Actions (Notifications and Create Entry) */}
+         
           <div className="flex items-center justify-between sm:justify-start gap-4 w-full sm:w-auto">
             {/* Notifications */}
             <div className="relative">
-              {/* Uncomment and customize your icon if needed */}
+            
               {/* <MdNotifications className="text-cyan-500 text-2xl" />
       <span className="border-2 p-1.5 border-cyan-500 absolute top-0 right-0 bg-gray-800 text-white text-xs rounded-full w-2.5 h-2.5 flex items-center justify-center">
         3
@@ -181,7 +181,7 @@ export default function CustomTable() {
               <Notifications notifications={notifications} />
             </div>
 
-            {/* Create Entry Dialog */}
+           
             <CreateEntryDialog
               onAddNotification={addNotification}
               onAdd={(newEntry) => setInvoices((prev) => [newEntry, ...prev])}
