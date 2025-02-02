@@ -145,7 +145,7 @@ const fetchInvoices = async () => {
     const params = searchQuery ? { search: searchQuery } : { page: currentPage, limit: rowsPerPage };
     const response = await axios.get('/api/carData', { params });
     setInvoices(response.data?.data || []);
-    setTotalInvoices(response.data.total || 0);
+    setTotalInvoices(response?.data?.total || 0);
   } catch (error) {
     console.error("Error fetching invoices:", error);
   }
